@@ -15,14 +15,16 @@ denomidas NoSQL.
 Introducicón mongoDB una de las bases de datos mas populares y de mayor crecimiento.
 
 
-Las bases de datos relacionales guardan datos en tablas y filas
+Las bases de datos relacionales guardan datos en tablas y filas. Lenguaje de consulta estructurado (SQL)
 ![image](https://github.com/johanalex566/NoSQL/assets/40399697/df7ae18a-f056-4f02-a7ba-84062f7a9292)
 
 ![image](https://github.com/johanalex566/NoSQL/assets/40399697/e70cbfd9-c997-480d-8938-182bc3cc51af)
 
+Por lo tanto, cuando alguien usa el término de bases de datos "NoSQL" se refiere a bases de datos no relacionales.
+
 En Mongo, no hay esquema para definir, no hay tablas ni relaciones entre las colecciones de objetos.
 Cada documento que guarde en Mongo puede ser tan plano y simple, o tan complejo como su aplicación requiera,
-Además, dos documentos en la misma colecicón puedn ser diferentes entre sí, ya que no hay ning+un esquema e rija la colección.
+Además, dos documentos en la misma colección puedn ser diferentes entre sí, ya que no hay ningún esquema que rija la colección.
 
 ![image](https://github.com/johanalex566/NoSQL/assets/40399697/74b9f398-2080-429f-952a-2580b79d7753)
 
