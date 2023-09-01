@@ -1,7 +1,6 @@
 # NoSQL
 
-by Andrew Brust Pluralsight
-by Nuri Halperin Pluralsight
+
 
 ![image](https://github.com/johanalex566/NoSQL/assets/40399697/9efb343d-c8ec-496a-9b85-5b80ccc4c08f)
 
@@ -12,7 +11,7 @@ Las bases de datos están en el corazón de la mayoría de las aplicaciones empr
 La de manda de escala, velocidad y rápido desarrollo de aplicaciones ha generado una nueva generación de base de datos,
 denomidas NoSQL.
 
-Introducicón mongoDB una de las bases de datos mas populares y de mayor crecimiento.
+**Introducicón mongoDB**
 
 
 Las bases de datos relacionales guardan datos en tablas y filas. Lenguaje de consulta estructurado (SQL)
@@ -34,7 +33,7 @@ La protecicón de integridad referencial en varias tablas y filas aumenta el tie
 Un mayor tiempo de bloqueo significa menos derechos o actualizaciones por segundo, significa una mayor latencia de las transacciones,
 significa una apliacaión mas lenta.
 
-¿Cómo almacena el motor los datos?
+**¿Cómo almacena el motor los datos?**
 
 Mongo utiliza archivos asignados a la memoria.
 El servidor no puede almacenar toda su información en la memoria, 
@@ -53,5 +52,22 @@ ha sido altamente optimizado, es realmente rápido y estable, por lo que el serv
 
 ![image](https://github.com/johanalex566/NoSQL/assets/40399697/e1037dde-00ca-46c6-b987-d24e269c2b46)
 
+**En que formato se guardan los datos?**
 
+**BSON**
 
+BSON significa "JSON binario", y eso es exactamente lo que se inventó para ser. La estructura binaria de BSON codifica información de tipo y longitud, lo que permite que se recorra mucho más rápidamente en comparación con JSON.
+
+BSON agrega algunos tipos de datos no nativos de JSON, como fechas y datos binarios, sin los cuales MongoDB habría perdido un soporte valioso.
+A continuación se muestran algunos objetos JSON de ejemplo y sus correspondientes representaciones BSON.
+
+![image](https://github.com/johanalex566/NoSQL/assets/40399697/ba087095-0bba-42a0-9977-6a901dbec3e5)
+
+A diferencia de los sistemas que almacenan JSON como valores codificados en cadena o blobs codificados en binario, MongoDB usa BSON para ofrecer potentes funciones de indexación y consulta sobre el formato de datos más popular de la web.
+
+by 
+ Andrew Brust Pluralsight
+ Nuri Halperin Pluralsight
+
+https://www.mongodb.com/json-and-bson
+https://app.pluralsight.com/course-player?clipId=23c8b62c-c5b1-404b-bc5d-57d5dbb5ec03
