@@ -34,3 +34,24 @@ La protecicón de integridad referencial en varias tablas y filas aumenta el tie
 Un mayor tiempo de bloqueo significa menos derechos o actualizaciones por segundo, significa una mayor latencia de las transacciones,
 significa una apliacaión mas lenta.
 
+¿Cómo almacena el motor los datos?
+
+Mongo utiliza archivos asignados a la memoria.
+El servidor no puede almacenar toda su información en la memoria, 
+pero le gustaría pensar que la información solo existe y que está disponible para él en cualquier momento, lo que hace
+es crear una matriz enorme y mapearla utilizando archivos mapeados en memoria.
+Cada vez que llama a jugar a una parte de ese arreglo el sistema operativo se encarga de cargarlo o guardalo en el disco.
+
+Cuando desea almacenar un poco de información la entega en el servidor, el servidor la escribe en la memoria y esa memoria se 
+administra y serializa en el disco.
+
+El mismo proceso a la inversa sucede cuando desea leer datos, el servidor intentará acceder a una parte de la matriz de bytes grande,
+que se cargará según sea necesario desde el sistema operativo.
+
+Es una muy buena idea aprovechar esta funcionalidad del sistema operativo, debido a que es una función central del sistema operativo,
+ha sido altamente optimizado, es realmente rápido y estable, por lo que el servido de mongoD no tiene que ocuparse de eso.
+
+![image](https://github.com/johanalex566/NoSQL/assets/40399697/e1037dde-00ca-46c6-b987-d24e269c2b46)
+
+
+
