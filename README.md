@@ -56,7 +56,7 @@ ha sido altamente optimizado, es realmente rápido y estable, por lo que el serv
 
 **BSON**
 
-BSON significa "JSON binario", y eso es exactamente lo que se inventó para ser. La estructura binaria de BSON codifica información de tipo y longitud, lo que permite que se recorra mucho más rápidamente en comparación con JSON.
+BSON significa "JSON binario". La estructura binaria de BSON codifica información de tipo y longitud, lo que permite que se recorra mucho más rápidamente en comparación con JSON.
 
 BSON agrega algunos tipos de datos no nativos de JSON, como fechas y datos binarios, sin los cuales MongoDB habría perdido un soporte valioso.
 A continuación se muestran algunos objetos JSON de ejemplo y sus correspondientes representaciones BSON.
@@ -65,8 +65,33 @@ A continuación se muestran algunos objetos JSON de ejemplo y sus correspondient
 
 A diferencia de los sistemas que almacenan JSON como valores codificados en cadena o blobs codificados en binario, MongoDB usa BSON para ofrecer potentes funciones de indexación y consulta sobre el formato de datos más popular de la web.
 
+**Collections**
+
+Una colección en Mongo define el alcance de la interacción con los documentos, en este la colección sería una tabla en SQL server por ejemplo y así mismo los documentos un registro.
+Debido a que Mongo no es una base de datos tradicional no puedo emitir comandos a través de varias coleeciones algo que si podría hacer en SQL server con una relación de JOIN por ejemplo.
+
+![image](https://github.com/johanalex566/NoSQL/assets/40399697/f4de80b9-2ae5-4844-9558-35b782385562)
+
+La única restricción a la hora de guardar un documento es agregarle un _id, el cuál solo podrá ser de los siguientes tipos de datos:
+
+En caso de no asignar el Id, Mongo lo creara por defecto
+![image](https://github.com/johanalex566/NoSQL/assets/40399697/477429cc-eaea-4a04-a99b-ad7593a29fe4)
+
+ObjectId, el cuál tiene varias propiedades una de ellas es que cada id tiene una propiedad que indica la fecha de creación, por lo que no es necesario una propieda adicional que almacene una fecha de creación.
+
+![image](https://github.com/johanalex566/NoSQL/assets/40399697/c5b0db6a-119b-4d26-97ca-10a0acc45ba4)
+
+
+
+
+
+
+
+
+
+
 by 
- Andrew Brust Pluralsight
+ Andrew Brust Pluralsight -
  Nuri Halperin Pluralsight
 
 https://www.mongodb.com/json-and-bson
