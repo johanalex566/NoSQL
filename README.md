@@ -81,6 +81,10 @@ ObjectId, el cuál tiene varias propiedades una de ellas es que cada id tiene un
 
 ![image](https://github.com/johanalex566/NoSQL/assets/40399697/c5b0db6a-119b-4d26-97ca-10a0acc45ba4)
 
+**Querys**
+
+**UPDATE**
+![image](https://github.com/johanalex566/NoSQL/assets/40399697/2d1e222b-0d6b-4f8e-ae16-0bc37fb4d376)
 
 
 
