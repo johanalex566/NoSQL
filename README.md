@@ -86,13 +86,25 @@ ObjectId, el cuál tiene varias propiedades una de ellas es que cada id tiene un
 **UPDATE**
 ![image](https://github.com/johanalex566/NoSQL/assets/40399697/2d1e222b-0d6b-4f8e-ae16-0bc37fb4d376)
 
+**db.food.updateOne({_id:2},{$inc:{x:1}})**
 
+Add new value
+**db.food.updateOne({_id:2},{$set:{y:8}})**
 
+Remove value
+ **db.food.updateOne({_id:2}, {$unset:{y:''}})**
 
+Rename column name
+**db.food.updateOne({_id:4}, {$rename:{'Naem': 'Name'}})**
 
+Update add array
+*db.food.updateOne({_id:4},{$push:{things:['One','two']}})**
 
+Update add new item only if no exists
+**db.food.updateOne({_id:4},{$addToSet:{things:['One','two','three']}})**
 
-
+Remove item of array
+**db.food.updateOne({_id:4},{$pull: { things: ['One','two'] }})**
 
 by 
  Andrew Brust Pluralsight -
