@@ -83,6 +83,11 @@ ObjectId, el cuál tiene varias propiedades una de ellas es que cada id tiene un
 
 **Querys**
 
+*INSERT*
+
+insertMany
+db.animals.insertMany([{_id:1,Name:"Tigre",Age:0},{_id:2, Name:"Oso", Age:1},{_id:3, Name: "Jirafa",Age:4},{_id:4,Name:"Lobo",Age:2}])
+
 **UPDATE**
 ![image](https://github.com/johanalex566/NoSQL/assets/40399697/2d1e222b-0d6b-4f8e-ae16-0bc37fb4d376)
 
@@ -105,6 +110,36 @@ Update add new item only if no exists
 
 Remove item of array
 **db.food.updateOne({_id:4},{$pull: { things: ['One','two'] }})**
+
+FindAndModifiy
+**db.food.findAndModify({ "query": { "things": 1 }, "update": { "$set": {"touched": true  }}, "sort": {"_id": 1},"new": true})**
+El campo "sort" específica que elemento se va actualizar 1: primer elemento de la lista o -1 el último.
+El campo "new" específica si el valor será retornado con el cambio de cambio.
+
+**FIND**
+
+db.animals.find()
+
+$get: mayor que
+db.animals.find({Age: {$gt:2}})
+
+$lt: Menor que
+db.animals.find({Age: {$lt:2}})
+
+$lte: Menor o igual
+db.animals.find({Age: {$lte:1}})
+
+$gte: mayor o igual
+db.animals.find({Age: {$gte:1}})
+
+Rango mayor y menor que
+db.animals.find({Age: {$gt:1, $lt:4}})
+
+campos que coincidan con 1 o 3
+db.animals.find({ Age: {$in:[1,3]} })
+
+campos que no coincidan con 1 o 3
+db.animals.find({ Age: {$nin:[1,3]} })
 
 by 
  Andrew Brust Pluralsight -
