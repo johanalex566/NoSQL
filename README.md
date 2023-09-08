@@ -118,28 +118,28 @@ El campo "new" específica si el valor será retornado con el cambio de cambio.
 
 **FIND**
 
-db.animals.find()
+**db.animals.find()**
 
-$get: mayor que
-db.animals.find({Age: {$gt:2}})
+$get: mayor que:
+**db.animals.find({Age: {$gt:2}})**
 
-$lt: Menor que
-db.animals.find({Age: {$lt:2}})
+$lt: Menor que:
+**db.animals.find({Age: {$lt:2}})**
 
-$lte: Menor o igual
-db.animals.find({Age: {$lte:1}})
+$lte: Menor o igual:
+**db.animals.find({Age: {$lte:1}})**
 
-$gte: mayor o igual
-db.animals.find({Age: {$gte:1}})
+$gte: mayor o igual:
+**db.animals.find({Age: {$gte:1}})**
 
-Rango mayor y menor que
-db.animals.find({Age: {$gt:1, $lt:4}})
+Rango mayor y menor que:
+**db.animals.find({Age: {$gt:1, $lt:4}})**
 
-campos que coincidan con 1 o 3
-db.animals.find({ Age: {$in:[1,3]} })
+campos que coincidan con 1 o 3:
+**db.animals.find({ Age: {$in:[1,3]} })**
 
-campos que no coincidan con 1 o 3
-db.animals.find({ Age: {$nin:[1,3]} })
+campos que no coincidan con 1 o 3:
+**db.animals.find({ Age: {$nin:[1,3]} })**
 
 by 
  Andrew Brust Pluralsight -
