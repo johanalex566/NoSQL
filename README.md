@@ -1,10 +1,6 @@
 # NoSQL
 
 
-
-![image](https://github.com/johanalex566/NoSQL/assets/40399697/9efb343d-c8ec-496a-9b85-5b80ccc4c08f)
-
-
 The big picture of NoSQL
 
 Las bases de datos están en el corazón de la mayoría de las aplicaciones empresariales y de internet.
@@ -93,22 +89,27 @@ db.animals.insertMany([{_id:1,Name:"Tigre",Age:0},{_id:2, Name:"Oso", Age:1},{_i
 
 **db.food.updateOne({_id:2},{$inc:{x:1}})**
 
-Add new value
+Add new value:
+
 **db.food.updateOne({_id:2},{$set:{y:8}})**
 
 Remove value
  **db.food.updateOne({_id:2}, {$unset:{y:''}})**
 
-Rename column name
+Rename column name:
+
 **db.food.updateOne({_id:4}, {$rename:{'Naem': 'Name'}})**
 
-Update add array
+Update add array:
+
 *db.food.updateOne({_id:4},{$push:{things:['One','two']}})**
 
-Update add new item only if no exists
+Update add new item only if no exists:
+
 **db.food.updateOne({_id:4},{$addToSet:{things:['One','two','three']}})**
 
-Remove item of array
+Remove item of array:
+
 **db.food.updateOne({_id:4},{$pull: { things: ['One','two'] }})**
 
 FindAndModifiy
@@ -121,25 +122,69 @@ El campo "new" específica si el valor será retornado con el cambio de cambio.
 **db.animals.find()**
 
 $get: mayor que:
+
 **db.animals.find({Age: {$gt:2}})**
 
 $lt: Menor que:
+
 **db.animals.find({Age: {$lt:2}})**
 
 $lte: Menor o igual:
 **db.animals.find({Age: {$lte:1}})**
 
 $gte: mayor o igual:
+
 **db.animals.find({Age: {$gte:1}})**
 
 Rango mayor y menor que:
+
 **db.animals.find({Age: {$gt:1, $lt:4}})**
 
 campos que coincidan con 1 o 3:
+
 **db.animals.find({ Age: {$in:[1,3]} })**
 
 campos que no coincidan con 1 o 3:
+
 **db.animals.find({ Age: {$nin:[1,3]} })**
+
+**Sort**
+
+ db.animals.find({},{Name:1}).sort({Name:1})
+
+![image](https://github.com/johanalex566/NoSQL/assets/40399697/3eec4757-6304-402d-a7c7-090fc8459588)
+
+**Limit**
+
+ db.animals.find().limit(2)
+
+![image](https://github.com/johanalex566/NoSQL/assets/40399697/e72e9048-e80b-433c-880d-ef45340bbfc5)
+
+
+**Indexing**
+
+The Problem:
+Los documentos se almacenan en un almacenamiento contiguo, cada uno en un punto diferente, para buscar los registros con x:10 
+el servidor tendría que visitar todos y cada uno de los documentos y ver si el valor del campo x es igual a 10.
+
+![image](https://github.com/johanalex566/NoSQL/assets/40399697/b96d0a82-e700-445d-a670-73fd7c49c102)
+
+La solución es utilizar un índice, cada documento tiene su propia ubicación en el disco.
+Un índice mantiene lógicamente la asignación a esas ubicaciones a partir de valores de campo
+
+Un índice en el campo x de la colección foo tiene una entrada para cada valor posible de x asociado con una
+lista de ubicaciones de documentos, cada uno de esos documentos contiene ese valor o clave
+
+Mongo buscaría en el índice, busque la entrada cuyo valor es 10, y salta directamente a ese documento,
+esto es mucho más rápdo que escanear todo el disco.
+![image](https://github.com/johanalex566/NoSQL/assets/40399697/bf9d8ff1-1824-44ca-8ff7-aefee76b2190)
+
+Indexes Types
+![image](https://github.com/johanalex566/NoSQL/assets/40399697/3536aa89-5241-4b1a-94ad-24f812c327a1)
+
+![image](https://github.com/johanalex566/NoSQL/assets/40399697/b9890622-9b96-4aec-b2ca-0315e0f18bab)
+
+
 
 by 
  Andrew Brust Pluralsight -
