@@ -179,6 +179,7 @@ lista de ubicaciones de documentos, cada uno de esos documentos contiene ese val
 
 Mongo buscaría en el índice, busque la entrada cuyo valor es 10, y salta directamente a ese documento,
 esto es mucho más rápdo que escanear todo el disco.
+ db.animals.ensureIndex({Name:1})
 ![image](https://github.com/johanalex566/NoSQL/assets/40399697/bf9d8ff1-1824-44ca-8ff7-aefee76b2190)
 
 Indexes Types
@@ -186,6 +187,12 @@ Indexes Types
 
 ![image](https://github.com/johanalex566/NoSQL/assets/40399697/b9890622-9b96-4aec-b2ca-0315e0f18bab)
 
+**Info indexes**
+db.animals.find({Name:'Leon'}).explain()
+![image](https://github.com/johanalex566/NoSQL/assets/40399697/16d54383-2a8b-4237-80af-60965febd4d0)
+
+Nested Fields
+![image](https://github.com/johanalex566/NoSQL/assets/40399697/61b4bceb-0146-4d1e-9ed6-862fe84d2698)
 
 
 by 
