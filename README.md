@@ -91,6 +91,8 @@ db.animals.insertMany([{_id:1,Name:"Tigre",Age:0},{_id:2, Name:"Oso", Age:1},{_i
 
 **db.food.updateOne({_id:2},{$inc:{x:1}})**
 
+**db.animals.updateMany({},{$set: {category:"carnivore"}})**
+
 Add new value:
 
 **db.food.updateOne({_id:2},{$set:{y:8}})**
@@ -162,6 +164,16 @@ campos que no coincidan con 1 o 3:
 
 ![image](https://github.com/johanalex566/NoSQL/assets/40399697/e72e9048-e80b-433c-880d-ef45340bbfc5)
 
+**Common Aggregations**
+
+db.animals.aggregate([{"$group":{"_id":"$category", "total": {"$sum": 1}}}])
+![image](https://github.com/johanalex566/NoSQL/assets/40399697/3280fc32-d959-49a6-899f-cd4b37ccfb2c)
+![image](https://github.com/johanalex566/NoSQL/assets/40399697/4eb68093-45e6-4520-8d4a-9b3f1fff3a79)
+![image](https://github.com/johanalex566/NoSQL/assets/40399697/4ca1193a-02dd-4c40-8593-38b207159cd2)
+![image](https://github.com/johanalex566/NoSQL/assets/40399697/b4288f34-d02d-4bb9-925d-6d951c8523e3)
+
+![image](https://github.com/johanalex566/NoSQL/assets/40399697/e83bb7cb-bcc4-4528-9e33-6b8f6963dbe6)
+![image](https://github.com/johanalex566/NoSQL/assets/40399697/8a3ea1a4-aa99-4253-ac99-0cba35f4ef47)
 
 **Indexing**
 
@@ -197,7 +209,8 @@ Nested Fields
 
 by 
  Andrew Brust Pluralsight -
- Nuri Halperin Pluralsight
+ Nuri Halperin Pluralsight-
+ Joel Taylor
 
 https://www.mongodb.com/json-and-bson
 https://app.pluralsight.com/course-player?clipId=23c8b62c-c5b1-404b-bc5d-57d5dbb5ec03
